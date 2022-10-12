@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D rb;
-    float movementSpeed = 5f;
+    public float movementSpeed = 5f;
     Vector2 movement;
     Animator animator;
 

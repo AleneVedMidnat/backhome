@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     Rigidbody2D rb;
+    Vector2 direction;
     Vector2 movement;
     public float walkSpeed = 3f;
     public float runSpeed = 5f;
@@ -30,7 +31,9 @@ public class PlayerMovement : MonoBehaviour
     Animator animator;
     public int HP = 25;
     public int TP = 15;
-    public int CooldownTime = 0;
+    public int CooldownTime = 5;
+    public float dashPower = 2f;
+    public int dashTime = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -42,29 +45,34 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (movement.y != 0 && movement.x != 0)
+        {
+            direction = movement;
+        }
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        
         //walk = WASD
         //run = left click
-        if (Input.GetKeyDown(KeyCode.Space) && Input.GetMouseButtonDown(1))
+        if (Input.GetKey(KeyCode.Space) && Input.GetMouseButton(1))
         {
             state = PlayerState.DashAttack;
         }
-        else if (Input.GetKeyDown(KeyCode.Space))
+        else if (Input.GetKey(KeyCode.Space))
         {
             state = PlayerState.Dash;
         }
-        else if (Input.GetMouseButtonDown(1))
+        else if (Input.GetMouseButton(1))
         {
             state = PlayerState.Attack;
         }
-        else if (Input.GetKeyDown(KeyCode.E))
+        else if (Input.GetKey(KeyCode.E))
         {
             state = PlayerState.SpecialAttack;
         }
         else if (movement.x != 0 || movement.y != 0)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButton(0))
             {
                 state = PlayerState.Run;
             }
@@ -95,10 +103,22 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate() // physics
     {
+        if (dashTime == 0)
+        {
+            rb.velocity = Vector2.zero;
+        }
+        else
+        {
+           dashTime--;
+        }
         //Idle,Walk,Run,Attack,Dash,DashAttack,SpecialAttack
         if (CooldownTime > 0)
         {
             CooldownTime--;
+        }
+        else if (CooldownTime < 0)
+        {
+            CooldownTime = 0;
         }
         bool check = coolDownTimeZero(); //checks if cooldown is 0
 
@@ -148,8 +168,22 @@ public class PlayerMovement : MonoBehaviour
     {
         if (check == true)
         {
-            Debug.Log("Dash initiated");
+            if (movement.x != 0 || movement.y != 0)
+            {
+                rb.velocity = new Vector2(movement.x * walkSpeed * dashPower, movement.y * walkSpeed * dashPower);
+                Debug.Log("Dash initiated");
+                CooldownTime = 50;
+                dashTime = 2;
+            }
+            else
+            {
+                rb.velocity = new Vector2(direction.x * walkSpeed * dashPower, direction.y * dashPower * walkSpeed);
+                Debug.Log("Dash initiated");
+                CooldownTime = 50;
+                dashTime = 2;
+            }
         }
+
     }
     private void DashAttack(bool check)
     {

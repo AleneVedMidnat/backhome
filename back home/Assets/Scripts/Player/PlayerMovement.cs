@@ -23,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
     Rigidbody2D rb;
-    Vector2 direction;
     Vector2 movement;
     public float walkSpeed = 3f;
     public float runSpeed = 5f;
@@ -45,10 +44,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (movement.y != 0 && movement.x != 0)
-        {
-            direction = movement;
-        }
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         
@@ -168,20 +163,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (check == true)
         {
-            if (movement.x != 0 || movement.y != 0)
-            {
-                rb.velocity = new Vector2(movement.x * walkSpeed * dashPower, movement.y * walkSpeed * dashPower);
-                Debug.Log("Dash initiated");
-                CooldownTime = 50;
-                dashTime = 2;
-            }
-            else
-            {
-                rb.velocity = new Vector2(direction.x * walkSpeed * dashPower, direction.y * dashPower * walkSpeed);
-                Debug.Log("Dash initiated");
-                CooldownTime = 50;
-                dashTime = 2;
-            }
+            rb.velocity = new Vector2(movement.x * walkSpeed * dashPower, movement.y * walkSpeed * dashPower);
+            Debug.Log("Dash initiated");
+            CooldownTime = 50;
+            dashTime = 2;
         }
 
     }

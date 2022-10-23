@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 614976093}
   - component: {fileID: 614976095}
   - component: {fileID: 614976094}
+  - component: {fileID: 614976097}
   m_Layer: 21
   m_Name: Tilemap_walls
   m_TagString: Untagged
@@ -2095,6 +2096,27 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!50 &614976097
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614976092}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1287820654
 GameObject:
   m_ObjectHideFlags: 0
@@ -4568,7 +4590,7 @@ MonoBehaviour:
   HP: 25
   TP: 15
   CooldownTime: 5
-  dashPower: 2
+  dashPower: 20
   dashTime: 0
 --- !u!50 &1529639092
 Rigidbody2D:

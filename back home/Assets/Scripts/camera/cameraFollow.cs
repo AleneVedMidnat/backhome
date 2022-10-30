@@ -9,7 +9,7 @@ public class cameraFollow : MonoBehaviour
     //public PlayerMovement player;
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         Vector3 newPos = new Vector3 (target.position.x, target.position.y, -10f);
         transform.position = newPos;

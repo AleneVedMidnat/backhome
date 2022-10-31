@@ -146,7 +146,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = movement.x * speed * Time.deltaTime;
         movement.y = movement.y * speed * Time.deltaTime;
-        rb.position = new Vector2(rb.position.x + movement.x, rb.position.y + movement.y);
+        rb.MovePosition(new Vector2(rb.position.x + movement.x, rb.position.y + movement.y));
         Debug.Log("Move pressed");
     }
     private void Attack(bool check)

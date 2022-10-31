@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 614976095}
   - component: {fileID: 614976094}
   - component: {fileID: 614976096}
+  - component: {fileID: 614976097}
   m_Layer: 20
   m_Name: Tilemap_walls
   m_TagString: Untagged
@@ -2127,6 +2128,27 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
   m_UseDelaunayMesh: 0
+--- !u!50 &614976097
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614976092}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1287820654
 GameObject:
   m_ObjectHideFlags: 0
@@ -4491,7 +4513,7 @@ GameObject:
   - component: {fileID: 1529639091}
   m_Layer: 20
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4916,7 +4938,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1934274410}
   - component: {fileID: 1934274409}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}

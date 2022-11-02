@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     public int CooldownTime = 5;
     public float dashPower = 2f;
     public int dashTime = 0;
+    private bool collidingWithEnemy = false;
 
     // Start is called before the first frame update
     void Start()
@@ -147,16 +148,18 @@ public class PlayerMovement : MonoBehaviour
         movement.x = movement.x * speed * Time.deltaTime;
         movement.y = movement.y * speed * Time.deltaTime;
         rb.MovePosition(new Vector2(rb.position.x + movement.x, rb.position.y + movement.y));
-        Debug.Log("Move pressed");
     }
     private void Attack(bool check)
     {
         if (check == true)
         {
+            if (collidingWithEnemy == true)
+            {
+                //play attack animation
+                //take off enemies hp
+            }
             Debug.Log("Attack initiated");
         }
-        //check if character is touching an enemy
-        //if so inflict damage on enemy
         
     }
     private void Dash(bool check)
@@ -197,6 +200,23 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             return true;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Enemy")
+        {
+            collidingWithEnemy = true;
+            HitCode enemyCode = collision.GetComponent<HitCode>();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy")
+        {
+            collidingWithEnemy = false;
         }
     }
 }

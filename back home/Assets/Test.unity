@@ -2161,6 +2161,7 @@ GameObject:
   - component: {fileID: 765111425}
   - component: {fileID: 765111424}
   - component: {fileID: 765111423}
+  - component: {fileID: 765111427}
   m_Layer: 20
   m_Name: enemy
   m_TagString: Enemy
@@ -2280,8 +2281,21 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &765111427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765111422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8cfd583f4b336449a7c3a358940b160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 10
 --- !u!1 &1287820654
 GameObject:
   m_ObjectHideFlags: 0
@@ -4755,9 +4769,12 @@ MonoBehaviour:
   runSpeed: 5
   HP: 25
   TP: 15
-  CooldownTime: 5
+  coolDownTimeReset: 5
   dashPower: 20
   dashTime: 0
+  specialAttackPrefab: {fileID: 7205736966190282299, guid: 41e966510f4de9941995698db70679d0,
+    type: 3}
+  shootSpeed: 5
 --- !u!50 &1529639092
 Rigidbody2D:
   serializedVersion: 4
@@ -5123,5 +5140,5 @@ Transform:
   - {fileID: 1844993092}
   - {fileID: 1287820655}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class HitCode : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int hp = 10;
+
+    private void Update()
     {
-        
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

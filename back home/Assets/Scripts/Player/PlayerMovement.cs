@@ -30,10 +30,15 @@ public class PlayerMovement : MonoBehaviour
     Animator animator;
     public int HP = 25;
     public int TP = 15;
-    public int CooldownTime = 5;
+    private int CooldownTime = 5;
+    [SerializeField] int coolDownTimeReset = 200;
     public float dashPower = 2f;
     public int dashTime = 0;
     private bool collidingWithEnemy = false;
+    private HitCode enemyCode = null;
+    private Vector2 shootDirection;
+    [SerializeField] private GameObject specialAttackPrefab;
+    [SerializeField] private float shootSpeed = 25f;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +50,13 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //setting this as the shoot direction may cause an issue where it shoots
+        //the wrong way, please be aware of that, but putting it after can also
+        //complicate things because you have to do a lot of checking axis raw
+        //which may affect fps, so it may be better to be a frame off, but depends
+        //ill have to test trade offs 
+        if (movement != Vector2.zero)
+            shootDirection = movement.normalized;
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         
@@ -156,9 +168,12 @@ public class PlayerMovement : MonoBehaviour
             if (collidingWithEnemy == true)
             {
                 //play attack animation
-                //take off enemies hp
+                enemyCode.hp -= 1;
+                Debug.Log("enemy attacked");
             }
-            Debug.Log("Attack initiated");
+            CooldownTime = 25;
+
+            Debug.Log(enemyCode.hp);
         }
         
     }
@@ -175,10 +190,15 @@ public class PlayerMovement : MonoBehaviour
     }
     private void DashAttack(bool check)
     {
+        //issue: doesnt work, might be bc it needs a continuous collisio type.
         if (check == true)
         {
-            //check if enemy is in path of dash if so take away their hp
-            //you can just call dash to get them to actual dash
+            Dash(check);
+            if (enemyCode != null)
+            {
+                enemyCode.hp--;
+                Debug.Log("enemy attacked");
+            }
             Debug.Log("DashAttack initiated");
         }
     }
@@ -186,8 +206,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (TP - 5 >= 0 && check == true)
         {
-            //create special attack in direction the player is facing (animator direction i guess cause it holds the
-            // last frame data
+            Debug.Log(shootDirection);
+            GameObject temp = Instantiate(specialAttackPrefab, transform.position, Quaternion.identity);
+            temp.GetComponent<Rigidbody2D>().AddForce(shootDirection * shootSpeed, ForceMode2D.Impulse);
+            TP -= 5;
+            CooldownTime = 50;
+
         }
         Debug.Log("SpecialAttack initiated");
     }
@@ -208,7 +232,8 @@ public class PlayerMovement : MonoBehaviour
         if(collision.tag == "Enemy")
         {
             collidingWithEnemy = true;
-            HitCode enemyCode = collision.GetComponent<HitCode>();
+            enemyCode = collision.gameObject.GetComponent<HitCode>();
+            Debug.Log("collision enetered");
         }
     }
 
@@ -217,6 +242,8 @@ public class PlayerMovement : MonoBehaviour
         if (collision.tag == "Enemy")
         {
             collidingWithEnemy = false;
+            enemyCode = null;
         }
+        Debug.Log("collision ended");
     }
 }

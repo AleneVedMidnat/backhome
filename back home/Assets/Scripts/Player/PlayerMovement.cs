@@ -28,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
     public float runSpeed = 5f;
     PlayerState state;
     Animator animator;
-    public int HP = 25;
     public int TP = 15;
     private int CooldownTime = 5;
     [SerializeField] int coolDownTimeReset = 200;

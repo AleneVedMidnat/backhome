@@ -4768,7 +4768,7 @@ MonoBehaviour:
   walkSpeed: 3
   runSpeed: 5
   HP: 25
-  TP: 15
+  TP: 1000
   coolDownTimeReset: 5
   dashPower: 20
   dashTime: 0

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8404377450138275584}
   - component: {fileID: 2734943902050983830}
   - component: {fileID: 8143674641173142715}
+  - component: {fileID: 1903299000074074013}
+  - component: {fileID: 4132497044892991902}
   m_Layer: 0
   m_Name: SpecialAttack
   m_TagString: Untagged
@@ -107,3 +109,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1903299000074074013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7205736966190282299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e101a8781ef2c14fa60d999497b5f4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpReduced: 2
+--- !u!58 &4132497044892991902
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7205736966190282299}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

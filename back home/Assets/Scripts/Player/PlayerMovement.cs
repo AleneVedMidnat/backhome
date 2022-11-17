@@ -75,12 +75,12 @@ public class PlayerMovement : MonoBehaviour
         else if (Input.GetKey(KeyCode.Space))
         {
             state = PlayerState.Dash;
-            newState = "Idle";
+            newState = "Dash";
         }
         else if (Input.GetMouseButton(1))
         {
             state = PlayerState.Attack;
-            newState = "Idle";
+            newState = "Attack";
         }
         else if (Input.GetKey(KeyCode.E))
         {
@@ -193,9 +193,7 @@ public class PlayerMovement : MonoBehaviour
                 enemyCode.hp -= 1;
                 Debug.Log("enemy attacked");
             }
-            CooldownTime = 25;
-
-            Debug.Log(enemyCode.hp);
+            CooldownTime = 5;
         }
         
     }

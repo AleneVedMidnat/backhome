@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a337e5c2701ada94b92bf4b67337e965
+guid: 79ca28ad3680c234f98241d82cc7c86a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,11 +106,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_0
+      name: LeftDash and roll_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 640
+        x: 1920
+        y: 960
         width: 320
         height: 320
       alignment: 0
@@ -120,18 +120,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d15561e655af8204bb0384ff960a12c6
-      internalID: 1112800178
+      spriteID: 947b68a107e2d6d4d9217786c7ac2d82
+      internalID: -994195824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_1
+      name: LeftDash and roll_1
       rect:
         serializedVersion: 2
-        x: 320
-        y: 640
+        x: 2240
+        y: 960
         width: 320
         height: 320
       alignment: 0
@@ -141,18 +141,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67eb484ecf261c848b4bd8f97bd4148e
-      internalID: -186238579
+      spriteID: 940af3752472c2145b9d335e453c947a
+      internalID: 1553891442
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_2
+      name: LeftDash and roll_2
       rect:
         serializedVersion: 2
-        x: 640
-        y: 640
+        x: 2560
+        y: 960
         width: 320
         height: 320
       alignment: 0
@@ -162,18 +162,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71a1bae5e899fe14fbfe41d1d3b50acd
-      internalID: -1487064709
+      spriteID: 49981268cd5cf8d4a9a61802b5a74a25
+      internalID: -881204959
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_3
+      name: LeftDash and roll_3
       rect:
         serializedVersion: 2
-        x: 960
-        y: 640
+        x: 2880
+        y: 960
         width: 320
         height: 320
       alignment: 0
@@ -183,14 +183,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3279b0f0d1ad15419025410f9902178
-      internalID: -1070303275
+      spriteID: 5f3539e437bee9c438bd135deb7c9852
+      internalID: -1819676549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_4
+      name: LeftDash and roll_4
       rect:
         serializedVersion: 2
         x: 1280
@@ -204,14 +204,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83918aba9ceac66449323adb64c1bf17
-      internalID: 1047520243
+      spriteID: fa496bb664ca0484f8fe265753918031
+      internalID: -1330052829
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_5
+      name: LeftDash and roll_5
       rect:
         serializedVersion: 2
         x: 1600
@@ -225,14 +225,98 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6c344e9ff72e7042a2f9fdd51d31f72
-      internalID: 1963004707
+      spriteID: f7a619953feabe94f86f7ee222eb81cd
+      internalID: -1216881183
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_6
+      name: LeftDash and roll_6
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 640
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b1448a000af2974b818cab098636763
+      internalID: -1999853094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeftDash and roll_7
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 640
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46f4a1bc4032c964fad24f0483e72e1b
+      internalID: 1003998923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeftDash and roll_8
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 640
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9cfe57ec20274e44a38096cd687ea58
+      internalID: 946284087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeftDash and roll_9
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 640
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aea442ec50ad0f439be9570bb5dbcf0
+      internalID: -885964638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeftDash and roll_10
       rect:
         serializedVersion: 2
         x: 0
@@ -246,14 +330,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b2c33de28475fd4db044d0a0306b95e
-      internalID: -1808759226
+      spriteID: e4c04aff8a71c304a9f7215c95934550
+      internalID: -763850507
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_7
+      name: LeftDash and roll_11
       rect:
         serializedVersion: 2
         x: 320
@@ -267,14 +351,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4610788361bb8246b05715d7ad6c6df
-      internalID: 464631270
+      spriteID: ad1e128103662db4dad316817a5a7ade
+      internalID: -2017725940
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_8
+      name: LeftDash and roll_12
       rect:
         serializedVersion: 2
         x: 640
@@ -288,14 +372,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb3f224388dd278458e592a100a3593a
-      internalID: 544202621
+      spriteID: 950bed9447b91244dbb006ae557e72de
+      internalID: -1051846955
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_9
+      name: LeftDash and roll_13
       rect:
         serializedVersion: 2
         x: 960
@@ -309,14 +393,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3beceaacebba88e4494c12556f5b29bb
-      internalID: -522889861
+      spriteID: e1c43870add5abc44991c16a914410eb
+      internalID: -1441107263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_10
+      name: LeftDash and roll_14
       rect:
         serializedVersion: 2
         x: 1280
@@ -330,14 +414,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3ba0e66fc4658c4580ae95d2028e4b3
-      internalID: 1015601298
+      spriteID: 9b36356c2494a944f82a64d74fd9b78b
+      internalID: 87409168
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_11
+      name: LeftDash and roll_15
       rect:
         serializedVersion: 2
         x: 1600
@@ -351,14 +435,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00c59173d62083a4e84a5ad6ad8115f2
-      internalID: 798845057
+      spriteID: a270abfba1f0ac14db1d662806d9b33c
+      internalID: -195455551
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_12
+      name: LeftDash and roll_16
       rect:
         serializedVersion: 2
         x: 1920
@@ -372,14 +456,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fc45893fbb9d4341b903f43312620b2
-      internalID: 1056540476
+      spriteID: 1a27f765f332b024395f9247d94e26eb
+      internalID: 1624877496
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_13
+      name: LeftDash and roll_17
       rect:
         serializedVersion: 2
         x: 2240
@@ -393,14 +477,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b691a5ea94cf46941852b11a4407a854
-      internalID: 1133286631
+      spriteID: 6464634ba49223945b672818d5f0df73
+      internalID: 181287824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_14
+      name: LeftDash and roll_18
       rect:
         serializedVersion: 2
         x: 2560
@@ -414,14 +498,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 118b0d264be5a9b4088127ac331f4ef2
-      internalID: -1958440350
+      spriteID: 123203e52591ca344bd6ae3439562491
+      internalID: 687552904
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_15
+      name: LeftDash and roll_19
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 320
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4a4a6998bb77b44a952dd665ea985a5
+      internalID: 981286765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeftDash and roll_20
       rect:
         serializedVersion: 2
         x: 0
@@ -435,14 +540,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6787993b6082251428e9c87d3e89a875
-      internalID: 1808957617
+      spriteID: 7f5a0a35b450e4f47bdcfc9044af56c0
+      internalID: 974769743
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_16
+      name: LeftDash and roll_21
       rect:
         serializedVersion: 2
         x: 320
@@ -456,14 +561,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3a2b308d5447d142b0c315899718046
-      internalID: -511555196
+      spriteID: 68be2228e15d7984d830879696eae9ef
+      internalID: -1337200
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_17
+      name: LeftDash and roll_22
       rect:
         serializedVersion: 2
         x: 640
@@ -477,14 +582,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9139ea0d2da68e4a9f63f33c2558619
-      internalID: -1025912544
+      spriteID: 88e7e225874edf04aafcca92e2f06bae
+      internalID: -1115916132
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_18
+      name: LeftDash and roll_23
       rect:
         serializedVersion: 2
         x: 960
@@ -498,14 +603,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fdea00e5b696ddd4ebd0e30cc7b2f3db
-      internalID: -1784088110
+      spriteID: 2731767c1fab4b74d836fa6a8d9333b5
+      internalID: 250051474
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_19
+      name: LeftDash and roll_24
       rect:
         serializedVersion: 2
         x: 1280
@@ -519,14 +624,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5343cd958011d294f90effe383aa0303
-      internalID: -1622183798
+      spriteID: 0f802d182b50f7341a479caa72cfa5ec
+      internalID: -116346536
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_20
+      name: LeftDash and roll_25
       rect:
         serializedVersion: 2
         x: 1600
@@ -540,14 +645,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad8b20103d17b6b4bbd4cb102005c999
-      internalID: -1274967940
+      spriteID: 3e88514552cb6e943845dac5aee77118
+      internalID: -691025265
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_21
+      name: LeftDash and roll_26
       rect:
         serializedVersion: 2
         x: 1920
@@ -561,8 +666,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5663a54e64c6ae645ba56716a2a936c1
-      internalID: -864233444
+      spriteID: bec51b535c9f957498d75905ad1d8aa5
+      internalID: -640653707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeftDash and roll_27
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 0
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7d5830f69cfde74e9a1626f276385d0
+      internalID: -1092119132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeftDash and roll_28
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ec6b4e8f414f9b40bc16696dec3b886
+      internalID: -2000878953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeftDash and roll_29
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 0
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 249d5e7a015902947b21c85a3bdee1a2
+      internalID: -30729534
       vertices: []
       indices: 
       edges: []
@@ -578,28 +746,36 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Side ConsecutiveSlash_9: -522889861
-      Side ConsecutiveSlash_15: 1808957617
-      Side ConsecutiveSlash_18: -1784088110
-      Side ConsecutiveSlash_3: -1070303275
-      Side ConsecutiveSlash_5: 1963004707
-      Side ConsecutiveSlash_14: -1958440350
-      Side ConsecutiveSlash_17: -1025912544
-      Side ConsecutiveSlash_6: -1808759226
-      Side ConsecutiveSlash_10: 1015601298
-      Side ConsecutiveSlash_8: 544202621
-      Side ConsecutiveSlash_16: -511555196
-      Side ConsecutiveSlash_0: 1112800178
-      Side ConsecutiveSlash_2: -1487064709
-      Side ConsecutiveSlash_11: 798845057
-      Side ConsecutiveSlash_20: -1274967940
-      Side ConsecutiveSlash_12: 1056540476
-      Side ConsecutiveSlash_13: 1133286631
-      Side ConsecutiveSlash_1: -186238579
-      Side ConsecutiveSlash_4: 1047520243
-      Side ConsecutiveSlash_7: 464631270
-      Side ConsecutiveSlash_21: -864233444
-      Side ConsecutiveSlash_19: -1622183798
+      LeftDash and roll_8: 946284087
+      LeftDash and roll_23: 250051474
+      LeftDash and roll_6: -1999853094
+      LeftDash and roll_7: 1003998923
+      LeftDash and roll_11: -2017725940
+      LeftDash and roll_28: -2000878953
+      LeftDash and roll_4: -1330052829
+      LeftDash and roll_18: 687552904
+      LeftDash and roll_27: -1092119132
+      LeftDash and roll_0: -994195824
+      LeftDash and roll_22: -1115916132
+      LeftDash and roll_13: -1441107263
+      LeftDash and roll_26: -640653707
+      LeftDash and roll_14: 87409168
+      LeftDash and roll_2: -881204959
+      LeftDash and roll_12: -1051846955
+      LeftDash and roll_3: -1819676549
+      LeftDash and roll_19: 981286765
+      LeftDash and roll_1: 1553891442
+      LeftDash and roll_10: -763850507
+      LeftDash and roll_16: 1624877496
+      LeftDash and roll_9: -885964638
+      LeftDash and roll_24: -116346536
+      LeftDash and roll_20: 974769743
+      LeftDash and roll_29: -30729534
+      LeftDash and roll_5: -1216881183
+      LeftDash and roll_25: -691025265
+      LeftDash and roll_15: -195455551
+      LeftDash and roll_17: 181287824
+      LeftDash and roll_21: -1337200
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

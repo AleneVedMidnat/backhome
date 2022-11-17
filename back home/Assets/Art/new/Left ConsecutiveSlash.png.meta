@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a337e5c2701ada94b92bf4b67337e965
+guid: c5f6afff9ff0e8b489ec99e3d4d82182
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,70 +106,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 640
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d15561e655af8204bb0384ff960a12c6
-      internalID: 1112800178
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Side ConsecutiveSlash_1
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 640
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 67eb484ecf261c848b4bd8f97bd4148e
-      internalID: -186238579
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Side ConsecutiveSlash_2
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 640
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 71a1bae5e899fe14fbfe41d1d3b50acd
-      internalID: -1487064709
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Side ConsecutiveSlash_3
+      name: Left ConsecutiveSlash_0
       rect:
         serializedVersion: 2
         x: 960
@@ -183,14 +120,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3279b0f0d1ad15419025410f9902178
-      internalID: -1070303275
+      spriteID: f35fdc2e3bed7e34594a30208468c39c
+      internalID: -571295399
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_4
+      name: Left ConsecutiveSlash_1
       rect:
         serializedVersion: 2
         x: 1280
@@ -204,14 +141,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83918aba9ceac66449323adb64c1bf17
-      internalID: 1047520243
+      spriteID: da42d64a22ae67f48b872d973c800c61
+      internalID: -708259544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_5
+      name: Left ConsecutiveSlash_2
       rect:
         serializedVersion: 2
         x: 1600
@@ -225,14 +162,77 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6c344e9ff72e7042a2f9fdd51d31f72
-      internalID: 1963004707
+      spriteID: d933643d8e9fa4446b950d3b577c3787
+      internalID: -917930854
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_6
+      name: Left ConsecutiveSlash_3
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 640
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7dca02c60312ff44bf178aa01fdc8eb
+      internalID: -946978368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left ConsecutiveSlash_4
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 640
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40a8c81ace0b37e43b9e317bc12563e4
+      internalID: -1419467437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left ConsecutiveSlash_5
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 640
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f26e87dfb4c6d5342871bdf63a6f8c03
+      internalID: -720459231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left ConsecutiveSlash_6
       rect:
         serializedVersion: 2
         x: 0
@@ -246,14 +246,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b2c33de28475fd4db044d0a0306b95e
-      internalID: -1808759226
+      spriteID: c7964a31f86ccb9408d45fc367d487a1
+      internalID: -601971891
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_7
+      name: Left ConsecutiveSlash_7
       rect:
         serializedVersion: 2
         x: 320
@@ -267,14 +267,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4610788361bb8246b05715d7ad6c6df
-      internalID: 464631270
+      spriteID: 79777a9c853785c458b068bbcd92910b
+      internalID: 730561910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_8
+      name: Left ConsecutiveSlash_8
       rect:
         serializedVersion: 2
         x: 640
@@ -288,14 +288,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb3f224388dd278458e592a100a3593a
-      internalID: 544202621
+      spriteID: 6fc1571ed19f4db428008ae7c0392a31
+      internalID: -1359851571
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_9
+      name: Left ConsecutiveSlash_9
       rect:
         serializedVersion: 2
         x: 960
@@ -309,14 +309,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3beceaacebba88e4494c12556f5b29bb
-      internalID: -522889861
+      spriteID: 33ae752a277a0214e88153eae5f60c00
+      internalID: -182489667
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_10
+      name: Left ConsecutiveSlash_10
       rect:
         serializedVersion: 2
         x: 1280
@@ -330,14 +330,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3ba0e66fc4658c4580ae95d2028e4b3
-      internalID: 1015601298
+      spriteID: 97d842e46515ebb4485af34b828bf866
+      internalID: 1180279967
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_11
+      name: Left ConsecutiveSlash_11
       rect:
         serializedVersion: 2
         x: 1600
@@ -351,14 +351,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00c59173d62083a4e84a5ad6ad8115f2
-      internalID: 798845057
+      spriteID: 0700356ede584ee49ae85f9b89972bb5
+      internalID: -560954168
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_12
+      name: Left ConsecutiveSlash_12
       rect:
         serializedVersion: 2
         x: 1920
@@ -372,14 +372,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fc45893fbb9d4341b903f43312620b2
-      internalID: 1056540476
+      spriteID: d3afc7a0c3f21b543875f7ac8e53ab05
+      internalID: 954830098
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_13
+      name: Left ConsecutiveSlash_13
       rect:
         serializedVersion: 2
         x: 2240
@@ -393,14 +393,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b691a5ea94cf46941852b11a4407a854
-      internalID: 1133286631
+      spriteID: a6314b1890836294cb17e90d2af91501
+      internalID: 1038509589
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_14
+      name: Left ConsecutiveSlash_14
       rect:
         serializedVersion: 2
         x: 2560
@@ -414,56 +414,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 118b0d264be5a9b4088127ac331f4ef2
-      internalID: -1958440350
+      spriteID: ea14f8f17e78f564c8717ae1201bb26d
+      internalID: 542840639
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_15
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6787993b6082251428e9c87d3e89a875
-      internalID: 1808957617
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Side ConsecutiveSlash_16
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a3a2b308d5447d142b0c315899718046
-      internalID: -511555196
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Side ConsecutiveSlash_17
+      name: Left ConsecutiveSlash_15
       rect:
         serializedVersion: 2
         x: 640
@@ -477,14 +435,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9139ea0d2da68e4a9f63f33c2558619
-      internalID: -1025912544
+      spriteID: 4099936358e9b4249bbaaab9200151ae
+      internalID: -239319050
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_18
+      name: Left ConsecutiveSlash_16
       rect:
         serializedVersion: 2
         x: 960
@@ -498,14 +456,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fdea00e5b696ddd4ebd0e30cc7b2f3db
-      internalID: -1784088110
+      spriteID: b439adf0399511a41b9ab4cbf914807a
+      internalID: -912674586
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_19
+      name: Left ConsecutiveSlash_17
       rect:
         serializedVersion: 2
         x: 1280
@@ -519,14 +477,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5343cd958011d294f90effe383aa0303
-      internalID: -1622183798
+      spriteID: cc49902a307dc0142a4b1e645ed83275
+      internalID: -2008090024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_20
+      name: Left ConsecutiveSlash_18
       rect:
         serializedVersion: 2
         x: 1600
@@ -540,14 +498,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad8b20103d17b6b4bbd4cb102005c999
-      internalID: -1274967940
+      spriteID: 5cb85797736a4404182a0761fbbf3f15
+      internalID: 1849160076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side ConsecutiveSlash_21
+      name: Left ConsecutiveSlash_19
       rect:
         serializedVersion: 2
         x: 1920
@@ -561,8 +519,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5663a54e64c6ae645ba56716a2a936c1
-      internalID: -864233444
+      spriteID: 827170c1d91239e468fa8279826635f9
+      internalID: -1408078845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left ConsecutiveSlash_20
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 0
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14038ddc3e05ca54486f1ec33ccc7f78
+      internalID: -2058640791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left ConsecutiveSlash_21
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccf952bd916a7b445a04a0f92d220831
+      internalID: -547562362
       vertices: []
       indices: 
       edges: []
@@ -578,28 +578,28 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Side ConsecutiveSlash_9: -522889861
-      Side ConsecutiveSlash_15: 1808957617
-      Side ConsecutiveSlash_18: -1784088110
-      Side ConsecutiveSlash_3: -1070303275
-      Side ConsecutiveSlash_5: 1963004707
-      Side ConsecutiveSlash_14: -1958440350
-      Side ConsecutiveSlash_17: -1025912544
-      Side ConsecutiveSlash_6: -1808759226
-      Side ConsecutiveSlash_10: 1015601298
-      Side ConsecutiveSlash_8: 544202621
-      Side ConsecutiveSlash_16: -511555196
-      Side ConsecutiveSlash_0: 1112800178
-      Side ConsecutiveSlash_2: -1487064709
-      Side ConsecutiveSlash_11: 798845057
-      Side ConsecutiveSlash_20: -1274967940
-      Side ConsecutiveSlash_12: 1056540476
-      Side ConsecutiveSlash_13: 1133286631
-      Side ConsecutiveSlash_1: -186238579
-      Side ConsecutiveSlash_4: 1047520243
-      Side ConsecutiveSlash_7: 464631270
-      Side ConsecutiveSlash_21: -864233444
-      Side ConsecutiveSlash_19: -1622183798
+      Left ConsecutiveSlash_21: -547562362
+      Left ConsecutiveSlash_9: -182489667
+      Left ConsecutiveSlash_10: 1180279967
+      Left ConsecutiveSlash_3: -946978368
+      Left ConsecutiveSlash_5: -720459231
+      Left ConsecutiveSlash_19: -1408078845
+      Left ConsecutiveSlash_16: -912674586
+      Left ConsecutiveSlash_8: -1359851571
+      Left ConsecutiveSlash_4: -1419467437
+      Left ConsecutiveSlash_17: -2008090024
+      Left ConsecutiveSlash_6: -601971891
+      Left ConsecutiveSlash_11: -560954168
+      Left ConsecutiveSlash_2: -917930854
+      Left ConsecutiveSlash_13: 1038509589
+      Left ConsecutiveSlash_12: 954830098
+      Left ConsecutiveSlash_0: -571295399
+      Left ConsecutiveSlash_15: -239319050
+      Left ConsecutiveSlash_1: -708259544
+      Left ConsecutiveSlash_18: 1849160076
+      Left ConsecutiveSlash_14: 542840639
+      Left ConsecutiveSlash_20: -2058640791
+      Left ConsecutiveSlash_7: 730561910
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

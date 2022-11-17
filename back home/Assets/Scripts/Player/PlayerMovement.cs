@@ -27,7 +27,12 @@ public class PlayerMovement : MonoBehaviour
     public float walkSpeed = 3f;
     public float runSpeed = 5f;
     PlayerState state;
-    Animator animator;
+
+    //animation variables
+    Animator m_animator;
+    private string currentAnimationState = "Idle";
+    private string newState;
+
     public int HP = 25;
     public int TP = 15;
     private int CooldownTime = 5;
@@ -44,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        m_animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -65,47 +70,64 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && Input.GetMouseButton(1))
         {
             state = PlayerState.DashAttack;
+            newState = "Idle";
         }
         else if (Input.GetKey(KeyCode.Space))
         {
             state = PlayerState.Dash;
+            newState = "Idle";
         }
         else if (Input.GetMouseButton(1))
         {
             state = PlayerState.Attack;
+            newState = "Idle";
         }
         else if (Input.GetKey(KeyCode.E))
         {
             state = PlayerState.SpecialAttack;
+            newState = "Idle";
         }
         else if (movement.x != 0 || movement.y != 0)
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetKey(KeyCode.R))
             {
                 state = PlayerState.Run;
+                newState = "Running";
             }
             else
             {
                 state = PlayerState.Walk;
+                newState = "Walking";
             }
         }
         else
         {
             state = PlayerState.Idle;
+            newState = "Idle";
         }
     }
 
     private void LateUpdate() // animation
     {
+        SetAnimationState();
+    }
+
+    void SetAnimationState()
+    {
+        if (newState != currentAnimationState)
+        {
+            m_animator.ResetTrigger(currentAnimationState);
+            currentAnimationState = newState;
+            m_animator.SetTrigger(currentAnimationState);
+        }
         if (movement.x != 0 || movement.y != 0)
         {
-            animator.SetFloat("horizontal", movement.x);
-            animator.SetFloat("vertical", movement.y);
-            animator.SetBool("idle", false);
+            m_animator.SetFloat("Horizontal", movement.x);
+            m_animator.SetFloat("Vertical", movement.y);
         }
         else
         {
-            animator.SetBool("idle", true);
+            m_animator.SetTrigger("Idle");
         }
     }
 

@@ -8,6 +8,7 @@ public class HitCode : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(hp);
         if (hp <= 0)
         {
             Destroy(gameObject);

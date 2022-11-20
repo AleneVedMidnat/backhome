@@ -6,7 +6,7 @@ public class EnemyAI : MonoBehaviour
 {
     Vector2 m_startPosition;
     Vector2 m_targetPosition;
-    [SerializeField] GameObject player;
+    public GameObject player;
     [SerializeField] int distanceToChase;
     [SerializeField] float m_speed;
     void Start()

@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Windows.Speech;
 using UnityEngine.XR;
 
 //needs doing:
@@ -44,6 +45,11 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 shootDirection;
     [SerializeField] private GameObject specialAttackPrefab;
     [SerializeField] private float shootSpeed = 25f;
+
+    //whether you can do an action 
+    bool canDash;
+    bool canAttack;
+    bool canSpecialAttack;
 
     // Start is called before the first frame update
     void Start()
@@ -142,15 +148,6 @@ public class PlayerMovement : MonoBehaviour
            dashTime--;
         }
         //Idle,Walk,Run,Attack,Dash,DashAttack,SpecialAttack
-        if (CooldownTime > 0)
-        {
-            CooldownTime--;
-        }
-        else if (CooldownTime < 0)
-        {
-            CooldownTime = 0;
-        }
-        bool check = coolDownTimeZero(); //checks if cooldown is 0
 
         switch (state)
         {
@@ -161,16 +158,20 @@ public class PlayerMovement : MonoBehaviour
                 Move(runSpeed);
                 break;
             case PlayerState.Attack:
-                Attack(check);
+                Attack();
+                SetWaitTime("canAttack", 1);
                 break;
             case PlayerState.Dash:
-                Dash(check);
+                Dash();
+                SetWaitTime("canDash", 1);
                 break;
             case PlayerState.DashAttack:
-                DashAttack(check);
+                SetWaitTime("canDash", 1);
+                DashAttack();
                 break;
             case PlayerState.SpecialAttack:
-                SpecialAttack(check);
+                SetWaitTime("canSpecialAttack", 1);
+                SpecialAttack();
                 break;
         }
 
@@ -183,9 +184,10 @@ public class PlayerMovement : MonoBehaviour
         movement.y = movement.y * speed * Time.deltaTime;
         rb.MovePosition(new Vector2(rb.position.x + movement.x, rb.position.y + movement.y));
     }
-    private void Attack(bool check)
+
+    private void Attack()
     {
-        if (check == true)
+        if (canAttack == true)
         {
             if (collidingWithEnemy == true)
             {
@@ -193,27 +195,25 @@ public class PlayerMovement : MonoBehaviour
                 enemyCode.hp -= 1;
                 Debug.Log("enemy attacked");
             }
-            CooldownTime = 5;
         }
         
     }
-    private void Dash(bool check)
+    private void Dash()
     {
-        if (check == true)
+        if (canDash == true)
         {
             rb.velocity = new Vector2(movement.x * walkSpeed * dashPower, movement.y * walkSpeed * dashPower);
             Debug.Log("Dash initiated");
-            CooldownTime = 50;
             dashTime = 2;
         }
 
     }
-    private void DashAttack(bool check)
+    private void DashAttack()
     {
         //issue: doesnt work, might be bc it needs a continuous collisio type.
-        if (check == true)
+        if (canDash == true)
         {
-            Dash(check);
+            Dash();
             if (enemyCode != null)
             {
                 enemyCode.hp--;
@@ -222,15 +222,14 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("DashAttack initiated");
         }
     }
-    private void SpecialAttack(bool check)
+    private void SpecialAttack()
     {
-        if (TP - 5 >= 0 && check == true)
+        if (TP - 5 >= 0 && canSpecialAttack == true)
         {
             Debug.Log(shootDirection);
             GameObject temp = Instantiate(specialAttackPrefab, transform.position, Quaternion.identity);
             temp.GetComponent<Rigidbody2D>().AddForce(shootDirection * shootSpeed, ForceMode2D.Impulse);
             TP -= 5;
-            CooldownTime = 50;
 
         }
         Debug.Log("SpecialAttack initiated");
@@ -267,4 +266,33 @@ public class PlayerMovement : MonoBehaviour
         }
         Debug.Log("collision ended");
     }
+
+    IEnumerator SetWaitTime(string change, float waitTime) 
+    {
+        switch (change)
+        {
+            case "canDash":
+                canDash = false;
+                break;
+            case "canAttack":
+                canAttack = false;
+                break;
+            case "canSpecialAttack":
+                canSpecialAttack = false;
+                break;
+        }
+        yield return new WaitForSeconds(waitTime);
+        switch (change)
+        {
+            case "canDash":
+                canDash = true;
+                break;
+            case "canAttack":
+                canAttack = true;
+                break;
+            case "canSpecialAttack":
+                canSpecialAttack = true;
+                break;
+        }
+    } 
 }

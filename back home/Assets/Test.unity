@@ -4712,18 +4712,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1529639087}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94fd55b16c4414545b948e731fa562cc, type: 3}
+  m_Script: {fileID: 11500000, guid: b54399b73b62cc54d8b5b26600a805e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 3
   runSpeed: 5
-  TP: 15
-  coolDownTimeReset: 200
   dashPower: 2
-  dashTime: 2
-  specialAttackPrefab: {fileID: 7205736966190282299, guid: 41e966510f4de9941995698db70679d0,
-    type: 3}
-  shootSpeed: 25
+  dashTime: 0
 --- !u!1 &1844993091
 GameObject:
   m_ObjectHideFlags: 0

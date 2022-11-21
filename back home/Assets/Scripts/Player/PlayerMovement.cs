@@ -34,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
     private string currentAnimationState = "Idle";
     private string newState;
 
-    public int HP = 25;
     public int TP = 15;
     private int CooldownTime = 5;
     [SerializeField] int coolDownTimeReset = 200;
@@ -47,9 +46,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float shootSpeed = 25f;
 
     //whether you can do an action 
-    bool canDash;
-    bool canAttack;
-    bool canSpecialAttack;
+    bool canDash = true;
+    bool canAttack = true;
+    bool canSpecialAttack = true;
 
     // Start is called before the first frame update
     void Start()
@@ -78,17 +77,17 @@ public class PlayerMovement : MonoBehaviour
             state = PlayerState.DashAttack;
             newState = "Idle";
         }
-        else if (Input.GetKey(KeyCode.Space))
+        else if (Input.GetKeyDown(KeyCode.Space))
         {
             state = PlayerState.Dash;
             newState = "Dash";
         }
-        else if (Input.GetMouseButton(1))
+        else if (Input.GetKeyDown(KeyCode.Q))
         {
             state = PlayerState.Attack;
             newState = "Attack";
         }
-        else if (Input.GetKey(KeyCode.E))
+        else if (Input.GetKeyDown(KeyCode.E))
         {
             state = PlayerState.SpecialAttack;
             newState = "Idle";
@@ -106,16 +105,12 @@ public class PlayerMovement : MonoBehaviour
                 newState = "Walking";
             }
         }
-        else
-        {
-            state = PlayerState.Idle;
-            newState = "Idle";
-        }
+        SetAnimationState();
     }
 
     private void LateUpdate() // animation
     {
-        SetAnimationState();
+        
     }
 
     void SetAnimationState()
@@ -159,18 +154,14 @@ public class PlayerMovement : MonoBehaviour
                 break;
             case PlayerState.Attack:
                 Attack();
-                SetWaitTime("canAttack", 1);
                 break;
             case PlayerState.Dash:
                 Dash();
-                SetWaitTime("canDash", 1);
                 break;
             case PlayerState.DashAttack:
-                SetWaitTime("canDash", 1);
                 DashAttack();
                 break;
             case PlayerState.SpecialAttack:
-                SetWaitTime("canSpecialAttack", 1);
                 SpecialAttack();
                 break;
         }
@@ -183,12 +174,14 @@ public class PlayerMovement : MonoBehaviour
         movement.x = movement.x * speed * Time.deltaTime;
         movement.y = movement.y * speed * Time.deltaTime;
         rb.MovePosition(new Vector2(rb.position.x + movement.x, rb.position.y + movement.y));
+        StartCoroutine(SetIdle());
     }
 
     private void Attack()
     {
         if (canAttack == true)
         {
+            //StartCoroutine(canAttackSet());
             if (collidingWithEnemy == true)
             {
                 //play attack animation
@@ -196,17 +189,18 @@ public class PlayerMovement : MonoBehaviour
                 Debug.Log("enemy attacked");
             }
         }
-        
+        StartCoroutine(SetIdle());
     }
     private void Dash()
     {
         if (canDash == true)
         {
+            StartCoroutine(canDashSet());
             rb.velocity = new Vector2(movement.x * walkSpeed * dashPower, movement.y * walkSpeed * dashPower);
             Debug.Log("Dash initiated");
             dashTime = 2;
         }
-
+        StartCoroutine(SetIdle());
     }
     private void DashAttack()
     {
@@ -214,6 +208,7 @@ public class PlayerMovement : MonoBehaviour
         if (canDash == true)
         {
             Dash();
+            StartCoroutine(canDashSet());
             if (enemyCode != null)
             {
                 enemyCode.hp--;
@@ -221,11 +216,13 @@ public class PlayerMovement : MonoBehaviour
             }
             Debug.Log("DashAttack initiated");
         }
+        StartCoroutine(SetIdle());
     }
     private void SpecialAttack()
     {
         if (TP - 5 >= 0 && canSpecialAttack == true)
         {
+            StartCoroutine(canSpecialAttackSet());
             Debug.Log(shootDirection);
             GameObject temp = Instantiate(specialAttackPrefab, transform.position, Quaternion.identity);
             temp.GetComponent<Rigidbody2D>().AddForce(shootDirection * shootSpeed, ForceMode2D.Impulse);
@@ -233,18 +230,9 @@ public class PlayerMovement : MonoBehaviour
 
         }
         Debug.Log("SpecialAttack initiated");
+        StartCoroutine(SetIdle());
     }
-    private bool coolDownTimeZero()
-    {
-        if (CooldownTime > 0)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
-    }
+    
     
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -267,32 +255,35 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("collision ended");
     }
 
-    IEnumerator SetWaitTime(string change, float waitTime) 
+    IEnumerator canDashSet()
     {
-        switch (change)
+        Debug.Log("this dash has been called");
+        canDash = false;
+        yield return new WaitForSecondsRealtime(1);
+        Debug.Log("dash reset");
+        canDash = true;
+    }
+
+    IEnumerator canAttackSet()
+    {
+        canAttack = false;
+        yield return new WaitForSeconds(0.1f);
+        canAttack = true;
+    }
+
+    IEnumerator canSpecialAttackSet()
+    {
+        canSpecialAttack = false;
+        yield return new WaitForSeconds(1);
+        canSpecialAttack = true;
+    }
+
+    IEnumerator SetIdle()
+    {
+        yield return new WaitForSeconds(0.5f);
+        if (!Input.anyKey)
         {
-            case "canDash":
-                canDash = false;
-                break;
-            case "canAttack":
-                canAttack = false;
-                break;
-            case "canSpecialAttack":
-                canSpecialAttack = false;
-                break;
+            state = PlayerState.Idle;
         }
-        yield return new WaitForSeconds(waitTime);
-        switch (change)
-        {
-            case "canDash":
-                canDash = true;
-                break;
-            case "canAttack":
-                canAttack = true;
-                break;
-            case "canSpecialAttack":
-                canSpecialAttack = true;
-                break;
-        }
-    } 
+    }
 }

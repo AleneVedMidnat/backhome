@@ -17,14 +17,14 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((player.transform.position - transform.position).magnitude < distanceToChase)
-        {
+        //if ((player.transform.position - transform.position).magnitude < distanceToChase)
+        //{
             m_targetPosition = player.transform.position;
-        }
-        else
-        {
-            m_targetPosition = m_startPosition;
-        }
+        //}
+        //else
+        //{
+        //    m_targetPosition = m_startPosition;
+        //}
         
     }
     private void FixedUpdate()

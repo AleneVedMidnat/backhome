@@ -6,6 +6,10 @@ public class SpecialAttackCode : MonoBehaviour
 {
     [SerializeField] int hpReduced = 2;
 
+    private void Start()
+    {
+        StartCoroutine(destroyself());
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Enemy")
@@ -22,4 +26,9 @@ public class SpecialAttackCode : MonoBehaviour
         Destroy(gameObject);
     }
 
+    IEnumerator destroyself()
+    {
+        yield return new WaitForSeconds(10);
+        Destroy(gameObject);
+    }
 }

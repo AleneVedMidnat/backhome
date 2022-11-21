@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Windows.Speech;
 using UnityEngine.XR;
 
 //needs doing:
@@ -27,8 +28,12 @@ public class PlayerMovement : MonoBehaviour
     public float walkSpeed = 3f;
     public float runSpeed = 5f;
     PlayerState state;
-    Animator animator;
-    public int HP = 25;
+
+    //animation variables
+    Animator m_animator;
+    private string currentAnimationState = "Idle";
+    private string newState;
+
     public int TP = 15;
     private int CooldownTime = 5;
     [SerializeField] int coolDownTimeReset = 200;
@@ -40,11 +45,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject specialAttackPrefab;
     [SerializeField] private float shootSpeed = 25f;
 
+    //whether you can do an action 
+    bool canDash = true;
+    bool canAttack = true;
+    bool canSpecialAttack = true;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        m_animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -65,47 +75,60 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && Input.GetMouseButton(1))
         {
             state = PlayerState.DashAttack;
+            newState = "Idle";
         }
-        else if (Input.GetKey(KeyCode.Space))
+        else if (Input.GetKeyDown(KeyCode.Space))
         {
             state = PlayerState.Dash;
+            newState = "Dash";
         }
-        else if (Input.GetMouseButton(1))
+        else if (Input.GetKeyDown(KeyCode.Q))
         {
             state = PlayerState.Attack;
+            newState = "Attack";
         }
-        else if (Input.GetKey(KeyCode.E))
+        else if (Input.GetKeyDown(KeyCode.E))
         {
             state = PlayerState.SpecialAttack;
+            newState = "Idle";
         }
         else if (movement.x != 0 || movement.y != 0)
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetKey(KeyCode.R))
             {
                 state = PlayerState.Run;
+                newState = "Running";
             }
             else
             {
                 state = PlayerState.Walk;
+                newState = "Walking";
             }
         }
-        else
-        {
-            state = PlayerState.Idle;
-        }
+        SetAnimationState();
     }
 
     private void LateUpdate() // animation
     {
+        
+    }
+
+    void SetAnimationState()
+    {
+        if (newState != currentAnimationState)
+        {
+            m_animator.ResetTrigger(currentAnimationState);
+            currentAnimationState = newState;
+            m_animator.SetTrigger(currentAnimationState);
+        }
         if (movement.x != 0 || movement.y != 0)
         {
-            animator.SetFloat("horizontal", movement.x);
-            animator.SetFloat("vertical", movement.y);
-            animator.SetBool("idle", false);
+            m_animator.SetFloat("Horizontal", movement.x);
+            m_animator.SetFloat("Vertical", movement.y);
         }
         else
         {
-            animator.SetBool("idle", true);
+            m_animator.SetTrigger("Idle");
         }
     }
 
@@ -120,15 +143,6 @@ public class PlayerMovement : MonoBehaviour
            dashTime--;
         }
         //Idle,Walk,Run,Attack,Dash,DashAttack,SpecialAttack
-        if (CooldownTime > 0)
-        {
-            CooldownTime--;
-        }
-        else if (CooldownTime < 0)
-        {
-            CooldownTime = 0;
-        }
-        bool check = coolDownTimeZero(); //checks if cooldown is 0
 
         switch (state)
         {
@@ -139,16 +153,16 @@ public class PlayerMovement : MonoBehaviour
                 Move(runSpeed);
                 break;
             case PlayerState.Attack:
-                Attack(check);
+                Attack();
                 break;
             case PlayerState.Dash:
-                Dash(check);
+                Dash();
                 break;
             case PlayerState.DashAttack:
-                DashAttack(check);
+                DashAttack();
                 break;
             case PlayerState.SpecialAttack:
-                SpecialAttack(check);
+                SpecialAttack();
                 break;
         }
 
@@ -160,40 +174,41 @@ public class PlayerMovement : MonoBehaviour
         movement.x = movement.x * speed * Time.deltaTime;
         movement.y = movement.y * speed * Time.deltaTime;
         rb.MovePosition(new Vector2(rb.position.x + movement.x, rb.position.y + movement.y));
+        StartCoroutine(SetIdle());
     }
-    private void Attack(bool check)
+
+    private void Attack()
     {
-        if (check == true)
+        if (canAttack == true)
         {
+            //StartCoroutine(canAttackSet());
             if (collidingWithEnemy == true)
             {
                 //play attack animation
                 enemyCode.hp -= 1;
                 Debug.Log("enemy attacked");
             }
-            CooldownTime = 25;
-
-            Debug.Log(enemyCode.hp);
         }
-        
+        StartCoroutine(SetIdle());
     }
-    private void Dash(bool check)
+    private void Dash()
     {
-        if (check == true)
+        if (canDash == true)
         {
+            StartCoroutine(canDashSet());
             rb.velocity = new Vector2(movement.x * walkSpeed * dashPower, movement.y * walkSpeed * dashPower);
             Debug.Log("Dash initiated");
-            CooldownTime = 50;
             dashTime = 2;
         }
-
+        StartCoroutine(SetIdle());
     }
-    private void DashAttack(bool check)
+    private void DashAttack()
     {
         //issue: doesnt work, might be bc it needs a continuous collisio type.
-        if (check == true)
+        if (canDash == true)
         {
-            Dash(check);
+            Dash();
+            StartCoroutine(canDashSet());
             if (enemyCode != null)
             {
                 enemyCode.hp--;
@@ -201,31 +216,24 @@ public class PlayerMovement : MonoBehaviour
             }
             Debug.Log("DashAttack initiated");
         }
+        StartCoroutine(SetIdle());
     }
-    private void SpecialAttack(bool check)
+    private void SpecialAttack()
     {
-        if (TP - 5 >= 0 && check == true)
+        if (TP - 5 >= 0 && canSpecialAttack == true)
         {
+            StartCoroutine(canSpecialAttackSet());
             Debug.Log(shootDirection);
             GameObject temp = Instantiate(specialAttackPrefab, transform.position, Quaternion.identity);
             temp.GetComponent<Rigidbody2D>().AddForce(shootDirection * shootSpeed, ForceMode2D.Impulse);
             TP -= 5;
-            CooldownTime = 50;
 
         }
         Debug.Log("SpecialAttack initiated");
+        StartCoroutine(SetIdle());
     }
-    private bool coolDownTimeZero()
-    {
-        if (CooldownTime > 0)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
-    }
+    
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -245,5 +253,37 @@ public class PlayerMovement : MonoBehaviour
             enemyCode = null;
         }
         Debug.Log("collision ended");
+    }
+
+    IEnumerator canDashSet()
+    {
+        Debug.Log("this dash has been called");
+        canDash = false;
+        yield return new WaitForSecondsRealtime(1);
+        Debug.Log("dash reset");
+        canDash = true;
+    }
+
+    IEnumerator canAttackSet()
+    {
+        canAttack = false;
+        yield return new WaitForSeconds(0.1f);
+        canAttack = true;
+    }
+
+    IEnumerator canSpecialAttackSet()
+    {
+        canSpecialAttack = false;
+        yield return new WaitForSeconds(1);
+        canSpecialAttack = true;
+    }
+
+    IEnumerator SetIdle()
+    {
+        yield return new WaitForSeconds(0.5f);
+        if (!Input.anyKey)
+        {
+            state = PlayerState.Idle;
+        }
     }
 }

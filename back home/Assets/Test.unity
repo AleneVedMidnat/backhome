@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &108690332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4717,8 +4717,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 3
   runSpeed: 5
-  dashPower: 2
+  dashPower: 20
   dashTime: 0
+  TP: 25
+  specialAttackPrefab: {fileID: 7205736966190282299, guid: 41e966510f4de9941995698db70679d0,
+    type: 3}
+  shootSpeed: 10
 --- !u!1 &1844993091
 GameObject:
   m_ObjectHideFlags: 0

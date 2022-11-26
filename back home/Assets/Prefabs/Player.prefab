@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3512197918699108482}
   - component: {fileID: 3512197918699108480}
   - component: {fileID: 3512197918699108481}
+  - component: {fileID: 4954452993179030093}
   m_Layer: 20
   m_Name: Player
   m_TagString: Player
@@ -35,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3512197918699108487
 SpriteRenderer:
@@ -179,3 +180,15 @@ MonoBehaviour:
   specialAttackPrefab: {fileID: 7205736966190282299, guid: 41e966510f4de9941995698db70679d0,
     type: 3}
   shootSpeed: 10
+--- !u!114 &4954452993179030093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3512197918699108505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb00fadac7c1bba4cb0c324d5c32b0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

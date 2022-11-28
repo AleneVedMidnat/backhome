@@ -18,7 +18,7 @@ public class PortalStoneInteraction : MonoBehaviour
     {
         if (portalStoneOn == false)
         {
-            if ((transform.position - m_player.transform.position).magnitude < 1)
+            if ((transform.position - m_player.transform.position).magnitude < 2)
             {
                 if (Input.GetKeyDown(KeyCode.P))
                 {

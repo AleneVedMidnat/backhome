@@ -11,6 +11,8 @@ public class pmn : MonoBehaviour
     [SerializeField] float walkSpeed = 3f;
     [SerializeField] float runSpeed = 5f;
 
+    public GameObject m_UI;
+
     Vector2 movement;
     //PlayerState m_state = PlayerState.idle;
 
@@ -178,6 +180,7 @@ public class pmn : MonoBehaviour
             GameObject temp = Instantiate(specialAttackPrefab, transform.position, Quaternion.identity);
             temp.GetComponent<Rigidbody2D>().AddForce(shootDirection * shootSpeed, ForceMode2D.Impulse);
             TP -= 5;
+            m_UI.GetComponent<UIscript>().SubtractTP(5);
 
         }
         Debug.Log("SpecialAttack initiated");

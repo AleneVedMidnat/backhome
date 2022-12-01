@@ -12,13 +12,17 @@ public class pauseUI : MonoBehaviour
     private void OnEnable()
     {
         currentTime = Time.timeScale;
-        Time.timeScale = 0;
+        Time.timeScale = 0f;
+        
     }
-    
+    private void Update()
+    {
+        Debug.Log("the time scel is" + Time.timeScale);
+    }
     public void setVariables()
     {
         m_UI.GetComponent<UIscript>().ResetElements();
-        m_player.GetComponent<PlayerHealth>().ResetVariables();
+        m_player.GetComponent<PlayerHealth>().continueGame();
     }
 
     public void ToMenu()
@@ -29,8 +33,7 @@ public class pauseUI : MonoBehaviour
      public void ToContinue()
     {
         Debug.Log("pressed");
-        Debug.Log(currentTime);
-        Time.timeScale = currentTime;
+        Time.timeScale = 1.0f;
         setVariables();
         this.transform.parent.gameObject.SetActive(false);
 

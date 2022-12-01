@@ -37,6 +37,7 @@ public class PlayerHealth : MonoBehaviour
     public void continueGame()
     {
         ResetVariables();
+        Debug.Log(startPosition);
         transform.position = startPosition;
     }
 }

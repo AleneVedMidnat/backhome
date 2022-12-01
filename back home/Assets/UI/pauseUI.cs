@@ -29,11 +29,10 @@ public class pauseUI : MonoBehaviour
      public void ToContinue()
     {
         Debug.Log("pressed");
-        this.transform.parent.gameObject.SetActive(false);
-        gameObject.SetActive(false);
+        Debug.Log(currentTime);
         Time.timeScale = currentTime;
         setVariables();
-        
+        this.transform.parent.gameObject.SetActive(false);
 
     }
 

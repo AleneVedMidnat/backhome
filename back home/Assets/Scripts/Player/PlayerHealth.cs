@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     int playerHP;
     Vector2 startPosition;
     [SerializeField] GameObject m_UI;
+    [SerializeField] GameObject m_pauseScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +23,20 @@ public class PlayerHealth : MonoBehaviour
         m_UI.GetComponent<UIscript>().SubtractHP(HPdec);
         if (playerHP <= 0)
         {
-            //display continue screen
-            transform.position = startPosition;
+            m_pauseScreen.SetActive(true);
+            
         }
+    }
+
+    public void ResetVariables()
+    {
+        playerHP = maxHealth;
+        gameObject.GetComponent<pmn>().TP = 25;
+    }
+
+    public void continueGame()
+    {
+        ResetVariables();
+        transform.position = startPosition;
     }
 }

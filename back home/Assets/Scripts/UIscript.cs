@@ -54,4 +54,14 @@ public class UIscript : MonoBehaviour
         TPslider.value = TPvalue;
         TPtext.GetComponent<TextMeshProUGUI>().SetText(TPvalue.ToString());
     }
+
+    public void ResetElements()
+    {
+        HPvalue = MaxHP;
+        HPslider.value = HPvalue;
+        HPtext.GetComponent<TextMeshProUGUI>().SetText(HPvalue.ToString());
+        TPvalue = MaxTP;
+        TPslider.value = TPvalue;
+        TPtext.GetComponent<TextMeshProUGUI>().SetText(TPvalue.ToString());
+    }
 }

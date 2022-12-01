@@ -25,7 +25,7 @@ public class pmn : MonoBehaviour
 
     public float dashPower = 100f;
     public int dashTime = 0;
-    [SerializeField] int TP = 25;
+    public int TP = 25;
 
     private Vector2 shootDirection;
     [SerializeField] private GameObject specialAttackPrefab;

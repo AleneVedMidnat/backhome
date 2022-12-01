@@ -27,6 +27,7 @@ public class PortalStoneInteraction : MonoBehaviour
                     gameObject.transform.GetChild(0).gameObject.SetActive(true);
                     m_portalStoneController.GetComponent<PortalStoneController>().AddPortalStone();
                     m_partnerStoneConnector.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+                    m_player.GetComponent<PlayerHealth>().ResetVariables();
                 }
             }
         }

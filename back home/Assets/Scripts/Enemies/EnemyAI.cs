@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] int distanceToChase;
     [SerializeField] float m_speed;
     bool colliding;
+    [SerializeField] AudioSource attackaudio;
 
     void Start()
     {
@@ -40,8 +41,8 @@ public class EnemyAI : MonoBehaviour
 
     void ShouldAttack()
     {
-        int temp = Random.Range(0, 100);
-        if (temp == 69)
+        int temp = Random.Range(0, 50);
+        if (temp == 25)
         {
             Attack();
         }
@@ -53,6 +54,7 @@ public class EnemyAI : MonoBehaviour
         {
             Debug.Log("attack from enemy");
             player.GetComponent<PlayerHealth>().decreaseHP(2);
+            attackaudio.Play();
         }
     }
 

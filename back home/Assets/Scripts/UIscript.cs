@@ -21,9 +21,12 @@ public class UIscript : MonoBehaviour
     void Start()
     {
         HPslider = HPholder.GetComponent<Slider>();
-        TPslider = HPholder.GetComponent<Slider>();
+        TPslider = TPholder.GetComponent<Slider>();
         HPvalue = MaxHP;
-        TPvalue = MaxTP;
+        TPvalue =  MaxTP;
+        HPslider.maxValue = MaxHP;
+        TPslider.maxValue = MaxTP;
+        
         HPtext.GetComponent<TextMeshProUGUI>().SetText(HPvalue.ToString());// = HPvalue.ToString();
         TPtext.GetComponent<TextMeshProUGUI>().SetText(TPvalue.ToString());
         
@@ -32,23 +35,23 @@ public class UIscript : MonoBehaviour
     public void AddHP(int HP)
     { 
         HPvalue += HP; 
-        HPslider.value = (HPvalue/MaxHP * 100);
+        HPslider.value = HPvalue;
         HPtext.GetComponent<TextMeshProUGUI>().SetText(HPvalue.ToString());
     }
     public void AddTP(int TP) { 
         TPvalue += TP; 
-        TPslider.value = (TPvalue/MaxTP * 100);
+        TPslider.value = TPvalue;
         TPtext.GetComponent<TextMeshProUGUI>().SetText(TPvalue.ToString());
     }
     public void SubtractHP(int HP) { 
         HPvalue -= HP;
-        HPslider.value = (HPvalue / MaxHP * 100);
+        HPslider.value = HPvalue;
         HPtext.GetComponent<TextMeshProUGUI>().SetText(HPvalue.ToString());
     }
     public void SubtractTP(int TP) 
     { 
-        HPvalue += TP;
-        TPslider.value = (TPvalue / MaxTP * 100);
+        TPvalue -= TP;
+        TPslider.value = TPvalue;
         TPtext.GetComponent<TextMeshProUGUI>().SetText(TPvalue.ToString());
     }
 }

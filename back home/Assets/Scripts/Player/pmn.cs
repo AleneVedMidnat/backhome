@@ -119,7 +119,6 @@ public class pmn : MonoBehaviour
                 Move(walkSpeed);
             }
         }
-        Debug.Log(functionQueue.Count);
         if (functionQueue.Count > 0)
         {
             switch (functionQueue.Peek())
@@ -188,7 +187,6 @@ public class pmn : MonoBehaviour
             m_UI.GetComponent<UIscript>().SubtractTP(5);
 
         }
-        Debug.Log("SpecialAttack initiated");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

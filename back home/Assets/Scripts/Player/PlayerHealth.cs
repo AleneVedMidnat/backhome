@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public int maxHealth = 50;
     int playerHP;
     Vector2 startPosition;
     [SerializeField] GameObject m_UI;
@@ -11,6 +12,8 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         startPosition = transform.position;
+        playerHP = maxHealth;
+        m_UI.GetComponent<UIscript>().MaxHP = maxHealth;
     }
 
     public void decreaseHP(int HPdec)

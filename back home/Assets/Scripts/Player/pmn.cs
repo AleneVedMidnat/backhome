@@ -33,12 +33,16 @@ public class pmn : MonoBehaviour
 
     private Queue<string> functionQueue;
 
+    //audio 
+    [SerializeField] AudioSource attackAudio;
+
     // Start is called before the first frame update
     void Start()
     {
         m_rb = GetComponent<Rigidbody2D>();
         m_animator = GetComponent<Animator>();
         functionQueue = new Queue<string>();
+        m_UI.GetComponent<UIscript>().MaxTP = TP;
     }
 
     // Update is called once per frame
@@ -55,6 +59,7 @@ public class pmn : MonoBehaviour
             {
                 //m_state = PlayerState.attack;
                 m_animator.Play("Base Layer.Attack");
+                attackAudio.Play();
                 StartCoroutine(SetToIdle(0.5f));
                 StartCoroutine(ResetMovement(0.5f));
                 functionQueue.Enqueue("attack");

@@ -138,7 +138,7 @@ TextureImporter:
         width: 46
         height: 78
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -159,7 +159,7 @@ TextureImporter:
         width: 17
         height: 59
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -167,6 +167,27 @@ TextureImporter:
       bones: []
       spriteID: 1744011b9d2515a469a71222fa9a8f34
       internalID: 469712565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Props 1_2
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 167
+        width: 107
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d49de8913bda91346a0cd9e3a6ae5a95
+      internalID: -1296035762
       vertices: []
       indices: 
       edges: []
@@ -226,6 +247,7 @@ TextureImporter:
       TX Props_62: -1313322664
       TX Props_57: -1465536410
       TX Props_75: -1228404603
+      TX Props 1_2: -1296035762
       TX Props_76: 786925442
       TX Props_105: -385711309
       TX Props_25: -918428043
@@ -242,17 +264,17 @@ TextureImporter:
       TX Props_72: 544058450
       TX Props_0: -2115481279
       TX Props_4: 1325374171
-      TX Props_21: -1998600260
       TX Props 1_1: 469712565
+      TX Props_21: -1998600260
       TX Props_55: -1158930112
       TX Props_95: 1767798203
       TX Props_36: -93843483
       TX Props_6: 431351659
       TX Props_69: -1012596740
       TX Props_60: -1195189807
-      TX Props_86: -2009285738
-      TX Props_65: -457259913
       TX Props 1_0: 671524421
+      TX Props_65: -457259913
+      TX Props_86: -2009285738
       TX Props_33: -1889540250
       TX Props_19: -1706262166
       TX Props_84: -1404591700

@@ -5,6 +5,16 @@ using UnityEngine;
 public class RespawnEnemies : MonoBehaviour
 {
     bool coroutineRunning=false;
+    [SerializeField] GameObject m_player;
+
+    private void Start()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            var child = transform.GetChild(i);
+            child.gameObject.GetComponent<EnemyAI>().player = m_player;
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (coroutineRunning == false)

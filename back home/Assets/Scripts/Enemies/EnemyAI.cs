@@ -14,12 +14,15 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
-        m_startPosition = transform.position;
+        m_startPosition = gameObject.transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
+        if ((Vector2)transform.position != m_targetPosition)
+        {
+            transform.position = Vector2.MoveTowards((Vector2)transform.position, m_targetPosition, m_speed);
+        }
         if ((player.transform.position - transform.position).magnitude < distanceToChase)
         {
             m_targetPosition = player.transform.position;
@@ -28,14 +31,6 @@ public class EnemyAI : MonoBehaviour
         else
         {
             m_targetPosition = m_startPosition;
-        }
-
-    }
-    private void FixedUpdate()
-    {
-        if ((Vector2)transform.position != m_targetPosition)
-        {
-            transform.position = Vector2.MoveTowards((Vector2)transform.position, m_targetPosition, m_speed);
         }
     }
 

@@ -184,7 +184,9 @@ public class pmn : MonoBehaviour
             Debug.Log(shootDirection);
             GameObject temp = Instantiate(specialAttackPrefab, transform.position, Quaternion.identity);
             temp.GetComponent<Rigidbody2D>().AddForce(shootDirection * shootSpeed, ForceMode2D.Impulse);
-            //temp.transform.rotation = Quaternion.LookRotation(shootDirection); 
+            float angle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg;
+            temp.transform.rotation = Quaternion.AngleAxis(angle + 135, Vector3.forward);
+            
             TP -= 5;
             m_UI.GetComponent<UIscript>().SubtractTP(5);
 

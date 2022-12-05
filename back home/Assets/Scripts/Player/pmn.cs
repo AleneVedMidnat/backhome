@@ -43,6 +43,7 @@ public class pmn : MonoBehaviour
         m_animator = GetComponent<Animator>();
         functionQueue = new Queue<string>();
         m_UI.GetComponent<UIscript>().MaxTP = TP;
+        shootDirection = new Vector2(0, 1);
     }
 
     // Update is called once per frame
@@ -183,6 +184,7 @@ public class pmn : MonoBehaviour
             Debug.Log(shootDirection);
             GameObject temp = Instantiate(specialAttackPrefab, transform.position, Quaternion.identity);
             temp.GetComponent<Rigidbody2D>().AddForce(shootDirection * shootSpeed, ForceMode2D.Impulse);
+            //temp.transform.rotation = Quaternion.LookRotation(shootDirection); 
             TP -= 5;
             m_UI.GetComponent<UIscript>().SubtractTP(5);
 

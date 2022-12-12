@@ -2,12 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class pauseUI : MonoBehaviour
 {
     
     [SerializeField] GameObject m_UI;
     [SerializeField] GameObject m_player;
+
+    //fade out
+    bool fadeout = false;
+    [SerializeField] GameObject blackImage;
+
     float currentTime;
     private void OnEnable()
     {
@@ -17,6 +23,18 @@ public class pauseUI : MonoBehaviour
     }
     private void Update()
     {
+        if (fadeout == true)
+        {
+            
+            var alpha = blackImage.GetComponent<Image>().color;
+            alpha.a += 0.001f;
+            Debug.Log(alpha.a);
+            blackImage.GetComponent<Image>().color = alpha;
+            if (alpha.a >= 1)
+            {
+                SceneManager.LoadScene("Start");
+            }
+        }
         Debug.Log("the time scel is" + Time.timeScale);
     }
     public void setVariables()
@@ -27,7 +45,7 @@ public class pauseUI : MonoBehaviour
 
     public void ToMenu()
     {
-        SceneManager.LoadScene("Start");
+        fadeout = true;
     }
 
      public void ToContinue()
@@ -38,5 +56,7 @@ public class pauseUI : MonoBehaviour
         this.transform.parent.gameObject.SetActive(false);
 
     }
+
+    
 
 }
